@@ -34,7 +34,7 @@ public class MainActivity extends HnroActivity {
      * =======================================================
      */
     private enum MenuItems {
-        talk("대화창", new TalkFragment().newInstance());
+        talk("대화창", new TalkFragment());
 
         private String menuTitle;
         private HnroFragment fragmentClass;

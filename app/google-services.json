@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1057918076125",
+    "firebase_url": "https://hnro-e2af6.firebaseio.com",
+    "project_id": "hnro-e2af6",
+    "storage_bucket": "hnro-e2af6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057918076125:android:3ef3f64d9def932b",
+        "android_client_info": {
+          "package_name": "com.hanyangraon.kei.app_hnro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057918076125-uaqj95cu9upgr5l5nuf0iepr5a53vito.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtvBi102HRIrD-qAgzOWL-0F2uc7XEg2I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
