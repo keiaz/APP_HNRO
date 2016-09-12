@@ -12,6 +12,7 @@
     <string name="login">로그인</string>
 
     <!-- talk -->
+    <string name="create_talk">새로운 대화 생성</string>
 
 
     <string name="section_format">Hello World from section: %1$d</string>

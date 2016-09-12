@@ -2,6 +2,7 @@ package com.hanyangraon.kei.app_hnro;
 
 import android.os.Bundle;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.hanyangraon.kei.app_hnro.appbase.HnroActivity;
 import com.hanyangraon.kei.app_hnro.manager.SharedPreferencesManager;
 import com.hanyangraon.kei.hnro_libs.manager.LogManager;
@@ -21,6 +22,9 @@ public class SplashActivity extends HnroActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        String token = FirebaseInstanceId.getInstance().getToken();
+        LogManager.getInstance().info(new Exception(token));
 
         String saml = SharedPreferencesManager.getInstance().getSAML(this);
         if (saml.isEmpty()) {

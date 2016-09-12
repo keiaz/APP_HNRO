@@ -1,12 +1,15 @@
 package com.hanyangraon.kei.app_hnro.fragment;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hanyangraon.kei.app_hnro.R;
 import com.hanyangraon.kei.app_hnro.appbase.HnroFragment;
+import com.hanyangraon.kei.app_hnro.fragment.dummy.DummyContent;
 
 /**
  * 메신저 대화창 프래그먼트
@@ -30,6 +33,15 @@ public class TalkFragment extends HnroFragment {
         if (isEmptyFragmentView()) {
             View view = inflater.inflate(R.layout.fragment_talk, container, false);
             setFragmentView(view);
+
+            // TalkItemFragment talkListView = (TalkItemFragment) view.findViewById(R.id.talk_list); // view didn't cast Fragment [...]
+            // RecyclerView talkListView = (RecyclerView) view.findViewById(R.id.talk_list);
+
+
+//            RecyclerView talkListView = (RecyclerView) view.findViewById(R.id.talk_list);
+//            talkListView.setLayoutManager(new LinearLayoutManager(talkListView.getContext()));
+//            talkListView.setAdapter(new TalkItemRecyclerViewAdapter(DummyContent.ITEMS));
+
         }
 
         return getFragmentView();
