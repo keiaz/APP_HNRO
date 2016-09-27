@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.MainActivity"
+            android:name=".view.OldMainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.LoginActivity"
@@ -41,7 +41,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
         <service
             android:name=".service.MyFirebaseInstanceIdService"
             android:enabled="true"
@@ -50,6 +49,8 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <activity android:name=".view.MainActivity"></activity>
     </application>
 
 </manifest>

@@ -46,7 +46,7 @@ public class SplashActivity extends HnroActivity {
             }.start();
         } else {
             // 메인으로 이동
-            moveActivity(MainActivity.class);
+            moveActivity(OldMainActivity.class);
         }
     }
 
