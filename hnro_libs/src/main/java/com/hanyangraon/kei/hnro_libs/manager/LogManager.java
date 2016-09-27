@@ -1,6 +1,8 @@
 package com.hanyangraon.kei.hnro_libs.manager;
 
+import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 /**
  * 로그 관리자
@@ -61,7 +63,17 @@ public class LogManager {
      * @param exception Exception
      */
     public void vervose(Exception exception) {
-        log(VERBOSE, exception);
+        log(VERBOSE, exception, null);
+    }
+
+    /**
+     * 동작 여부를 자세히 살필 목적으로 남기는 로그
+     *
+     * @param exception Exception
+     * @param context   화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
+     */
+    public void vervose(Exception exception, Context context) {
+        log(VERBOSE, exception, context);
     }
 
     /**
@@ -70,7 +82,17 @@ public class LogManager {
      * @param exception Exception
      */
     public void info(Exception exception) {
-        log(INFO, exception);
+        log(INFO, exception, null);
+    }
+
+    /**
+     * 처리중 발생하는 진행 과정 모니터링을 위해 남기는 로그
+     *
+     * @param exception Exception
+     * @param context   화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
+     */
+    public void info(Exception exception, Context context) {
+        log(INFO, exception, context);
     }
 
     /**
@@ -79,7 +101,17 @@ public class LogManager {
      * @param exception Exception
      */
     public void debugging(Exception exception) {
-        log(DEBUG, exception);
+        log(DEBUG, exception, null);
+    }
+
+    /**
+     * 디버깅 목적으로 남기는 로그
+     *
+     * @param exception Exception
+     * @param context   화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
+     */
+    public void debugging(Exception exception, Context context) {
+        log(DEBUG, exception, context);
     }
 
     /**
@@ -88,7 +120,17 @@ public class LogManager {
      * @param exception Exception
      */
     public void warning(Exception exception) {
-        log(WARN, exception);
+        log(WARN, exception, null);
+    }
+
+    /**
+     * 경고 메시지 로그
+     *
+     * @param exception Exception
+     * @param context   화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
+     */
+    public void warning(Exception exception, Context context) {
+        log(WARN, exception, context);
     }
 
     /**
@@ -97,17 +139,28 @@ public class LogManager {
      * @param exception Exception
      */
     public void error(Exception exception) {
-        log(ERROR, exception);
+        log(ERROR, exception, null);
+    }
+
+    /**
+     * 심각한 에러 발생시 출력되는 로그
+     *
+     * @param exception Exception
+     * @param context   화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
+     */
+    public void error(Exception exception, Context context) {
+        log(ERROR, exception, context);
     }
 
     /**
      * 로그 출력
      *
-     * @param type 로그 타입
-     * @param e    Exception
+     * @param type    로그 타입
+     * @param e       Exception
+     * @param context 화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
      */
-    private void log(int type, Exception e) {
-        if (type >= mLogDepth) {
+    private void log(int type, Exception e, Context context) {
+        if (mLogDepth <= type) {
             StackTraceElement element = e.getStackTrace()[0];
 
             String fullClassName = element.getClassName();
@@ -136,6 +189,9 @@ public class LogManager {
                     break;
             }
 
+            if (null != context) {
+                Toast.makeText(context, fullMessage, Toast.LENGTH_LONG).show();
+            }
         }
     }
 

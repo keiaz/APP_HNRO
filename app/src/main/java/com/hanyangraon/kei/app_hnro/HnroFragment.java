@@ -1,4 +1,4 @@
-package com.hanyangraon.kei.app_hnro.appbase;
+package com.hanyangraon.kei.app_hnro;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

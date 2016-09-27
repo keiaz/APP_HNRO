@@ -1,4 +1,4 @@
-package com.hanyangraon.kei.app_hnro;
+package com.hanyangraon.kei.app_hnro.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,8 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hanyangraon.kei.app_hnro.appbase.HnroActivity;
-import com.hanyangraon.kei.app_hnro.appbase.HnroFragment;
+import com.hanyangraon.kei.app_hnro.HnroActivity;
+import com.hanyangraon.kei.app_hnro.HnroFragment;
+import com.hanyangraon.kei.app_hnro.R;
 import com.hanyangraon.kei.app_hnro.fragment.TalkFragment;
 
 /**

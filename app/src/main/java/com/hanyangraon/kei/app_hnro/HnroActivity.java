@@ -1,4 +1,4 @@
-package com.hanyangraon.kei.app_hnro.appbase;
+package com.hanyangraon.kei.app_hnro;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.hanyangraon.kei.app_hnro.R;
 import com.hanyangraon.kei.hnro_libs.manager.ActivityManager;
 
 /**

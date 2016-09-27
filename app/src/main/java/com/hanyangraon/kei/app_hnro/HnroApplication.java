@@ -1,4 +1,4 @@
-package com.hanyangraon.kei.app_hnro.appbase;
+package com.hanyangraon.kei.app_hnro;
 
 import android.app.Application;
 

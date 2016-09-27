@@ -1,15 +1,12 @@
 package com.hanyangraon.kei.app_hnro.fragment;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.hanyangraon.kei.app_hnro.R;
-import com.hanyangraon.kei.app_hnro.appbase.HnroFragment;
-import com.hanyangraon.kei.app_hnro.fragment.dummy.DummyContent;
+import com.hanyangraon.kei.app_hnro.HnroFragment;
 
 /**
  * 메신저 대화창 프래그먼트
