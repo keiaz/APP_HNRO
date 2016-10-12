@@ -40,13 +40,13 @@ public class SplashActivity extends HnroActivity {
                     } catch (InterruptedException e) {
                         LogManager.getInstance().error(e, getBaseContext());
                     } finally {
-                        moveActivity(LoginActivity.class);
+                        // moveActivity(LoginActivity.class);
                     }
                 }
             }.start();
         } else {
             // 메인으로 이동
-            moveActivity(OldMainActivity.class);
+            // moveActivity(OldMainActivity.class);
         }
     }
 

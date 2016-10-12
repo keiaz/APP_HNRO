@@ -22,7 +22,8 @@ import com.hanyangraon.kei.hnro_libs.manager.ActivityManager;
 public class HnroActivity extends AppCompatActivity implements View.OnClickListener {
 
     /**
-     * 모든 프래그먼트, 로더의 초기화 수행
+     * 모든 프래그먼트, 로더의 초기화 수행<br>
+     * 생성시 ActivityManager에 해당 액티비티를 추가한다
      *
      * @param savedInstanceState 액티비티 종료 후 다시 초기화될 때, 가장 최근에 onSaveInstanceState(Bundle)로 저장된 데이터. 없으면 null
      */
@@ -57,15 +58,12 @@ public class HnroActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        boolean result = super.onOptionsItemSelected(item);
-
         /*
         // TODO set custom action for actionbar's 'home as up' button selected
         if (android.R.id.home == item.getItemId()) {
         }
         */
-
-        return result;
+        return super.onOptionsItemSelected(item);
     }
 
     /**
@@ -91,15 +89,6 @@ public class HnroActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * {@link HnroApplication} 획득
-     *
-     * @return HnroApplication
-     */
-    public HnroApplication getHnroApplication() {
-        return (HnroApplication) getApplication();
-    }
-
-    /**
      * View에 클릭 이벤트 리스너를 부착
      *
      * @param viewid 부착할 대상 View의 id
@@ -112,48 +101,12 @@ public class HnroActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * View를 화면에 보여주거나 감춘다.
-     *
-     * @param viewid 보여주거나 감출 화면 id
-     * @param isShow 보여줄 경우 true. 감출 경우 false. 감출 경우 해당 View가 차지하고 있던 영역도 사라진다
-     */
-    public void setVisibility(int viewid, boolean isShow) {
-        View view = findViewById(viewid);
-        if (view != null) {
-            view.setVisibility(isShow ? View.VISIBLE : View.GONE);
-        }
-    }
-
-    /**
-     * 화면 이동
-     *
-     * @param activityClass 이동할, {@link HnroActivity}를 상속받은 Activity의 클래스
-     * @param flags         Intent에 추가할 플래그들
-     */
-    protected void moveActivity(Class<? extends HnroActivity> activityClass, int... flags) {
-        Intent intent = new Intent(this, activityClass);
-        for (int flag : flags) {
-            intent.addFlags(flag);
-        }
-        startActivity(intent);
-    }
-
-    /**
-     * 화면 이동
-     *
-     * @param activityClass 이동할, {@link HnroActivity}를 상속받은 Activity의 클래스
-     */
-    protected void moveActivity(Class<? extends HnroActivity> activityClass) {
-        startActivity(new Intent(this, activityClass));
-    }
-
-    /**
      * 내용 확인용 알림창을 출력한다
      *
      * @param titleResid   알림창 타이틀. -1일경우 타이틀을 출력하지 않는다.
      * @param messageResid 알림창에 출력할 메시지
      */
-    public void showConfirmAlert(int titleResid, int messageResid) {
+    protected void showConfirmAlert(int titleResid, int messageResid) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         if (titleResid != -1) {
@@ -171,6 +124,54 @@ public class HnroActivity extends AppCompatActivity implements View.OnClickListe
 
         builder.create().show();
     }
+
+
+    /**
+     * {@link HnroApplication} 획득
+     *
+     * @return HnroApplication
+     */
+    // public HnroApplication getHnroApplication() {
+//        return (HnroApplication) getApplication();
+//    }
+
+    /**
+     * 지정한 액티비티로 이동
+     *
+     * @param activityClass 이동할 {@link HnroActivity}를 상속받은 Activity 클래스
+
+    protected void moveActivity(Class<? extends HnroActivity> activityClass) {
+    startActivity(new Intent(this, activityClass));
+    }
+     */
+
+    /**
+     * View를 화면에 보여주거나 감춘다.
+     *
+     * @param viewid 보여주거나 감출 화면 id
+     * @param isShow 보여줄 경우 true. 감출 경우 false. 감출 경우 해당 View가 차지하고 있던 영역도 사라진다
+     */
+//    public void setVisibility(int viewid, boolean isShow) {
+//        View view = findViewById(viewid);
+//        if (view != null) {
+//            view.setVisibility(isShow ? View.VISIBLE : View.GONE);
+//        }
+//    }
+
+    /**
+     * 화면 이동
+     *
+     * @param activityClass 이동할, {@link HnroActivity}를 상속받은 Activity의 클래스
+     * @param flags         Intent에 추가할 플래그들
+     */
+//    protected void moveActivity(Class<? extends HnroActivity> activityClass, int... flags) {
+//        Intent intent = new Intent(this, activityClass);
+//        for (int flag : flags) {
+//            intent.addFlags(flag);
+//        }
+//        startActivity(intent);
+//    }
+
 
     /**
      * Custom Action bar를 세팅하고 타이틀을 적용합니다

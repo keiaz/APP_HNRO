@@ -149,7 +149,7 @@ public class LoginActivity extends HnroActivity implements LoaderCallbacks<Curso
      */
     private void attemptLogin() {
         if (isTempView) {
-            moveActivity(OldMainActivity.class);
+            // moveActivity(OldMainActivity.class);
         }
 
         if (mAuthTask != null) {

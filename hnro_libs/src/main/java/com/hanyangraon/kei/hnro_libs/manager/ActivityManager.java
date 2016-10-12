@@ -15,9 +15,9 @@ import java.util.Iterator;
  */
 public class ActivityManager {
 
-    private static ActivityManager instance = null; // 인스턴스 저장
+    private static ActivityManager sInstance = null; // 인스턴스 저장
 
-    private ArrayList<Activity> activityList; // 액티비티 목록
+    private ArrayList<Activity> mActivityList; // 액티비티 목록
 
 
     /**
@@ -25,7 +25,7 @@ public class ActivityManager {
      * 생성시 액티비티 목록을 초기화
      */
     private ActivityManager() {
-        activityList = new ArrayList<>();
+        mActivityList = new ArrayList<>();
     }
 
     /**
@@ -34,10 +34,10 @@ public class ActivityManager {
      * @return 저장된 인스턴스 반환
      */
     public static ActivityManager getInstance() {
-        if (instance == null) {
-            instance = new ActivityManager();
+        if (sInstance == null) {
+            sInstance = new ActivityManager();
         }
-        return instance;
+        return sInstance;
     }
 
     /**
@@ -45,9 +45,9 @@ public class ActivityManager {
      *
      * @return activityList에 저장된 Activity의 개수
      */
-    public int getSize() {
-        return activityList.size();
-    }
+    // public int getSize() {
+//    return activityList.size();
+//}
 
     /**
      * activityList에 해당 HnroAppCompatActivity가 포함되어 있는지 여부를 반환
@@ -55,8 +55,8 @@ public class ActivityManager {
      * @param activity 확인할 Activity
      * @return 포함되어 있으면 true.
      */
-    public boolean hasActivity(Activity activity) {
-        return activityList.contains(activity);
+    private boolean hasActivity(Activity activity) {
+        return mActivityList.contains(activity);
     }
 
     /**
@@ -66,7 +66,7 @@ public class ActivityManager {
      */
     public void addActivity(Activity activity) {
         if (!hasActivity(activity)) {
-            activityList.add(activity);
+            mActivityList.add(activity);
         }
     }
 
@@ -75,15 +75,15 @@ public class ActivityManager {
      *
      * @return 마지막으로 추가된 HnroAppCompatActivity
      */
-    public Activity getLastActivity() {
-        int lastIndex = activityList.size() - 1;
-
-        if (lastIndex != -1) {
-            return activityList.get(lastIndex);
-        } else {
-            return null;
-        }
-    }
+//    public Activity getLastActivity() {
+//        int lastIndex = activityList.size() - 1;
+//
+//        if (lastIndex != -1) {
+//            return activityList.get(lastIndex);
+//        } else {
+//            return null;
+//        }
+//    }
 
     /**
      * activityList에서 특정 HnroAppCompatActivity를 제거한다.
@@ -91,17 +91,17 @@ public class ActivityManager {
      * @param activity 제거할 Activity
      */
     public boolean removeActivity(Activity activity) {
-        return activityList.remove(activity);
+        return mActivityList.remove(activity);
     }
 
     /**
      * 배열에 저장된 모든 HnroAppCompatActivity를 종료한다.
      */
     public void finishAllActivity() {
-        for (Activity activity : activityList) {
+        for (Activity activity : mActivityList) {
             activity.finish();
         }
-        activityList.clear();
+        mActivityList.clear();
     }
 
     /**
@@ -110,7 +110,7 @@ public class ActivityManager {
      * @param activityClass 종료하지 않고 남겨둘, {@link Activity} 상속 activity의 Class
      */
     public void finishActivity(Class<? extends Activity> activityClass) {
-        Iterator<Activity> iterator = activityList.iterator();
+        Iterator<Activity> iterator = mActivityList.iterator();
         while (iterator.hasNext()) {
             Activity activity = iterator.next();
             if (activity.getClass() == activityClass) {

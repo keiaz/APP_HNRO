@@ -25,9 +25,6 @@ public class LogManager {
 
     private static LogManager sInstance = null;
 
-    // parameters
-    private int mLogDepth = VERBOSE; // 로그 출력 단계 설정
-
 
     /**
      * 생성자를 private로 설정
@@ -46,15 +43,6 @@ public class LogManager {
             sInstance = new LogManager();
         }
         return sInstance;
-    }
-
-    /**
-     * 로그 출력 단계 설정
-     *
-     * @param logDepth 로그 출력 단계
-     */
-    public void setLogDepth(int logDepth) {
-        this.mLogDepth = logDepth;
     }
 
     /**
@@ -160,6 +148,8 @@ public class LogManager {
      * @param context 화면에 토스트를 출력하고자 할 경우, 토스트를 표현할 컨텍스트. 토스트가 불필요할 경우 null
      */
     private void log(int type, Exception e, Context context) {
+        int mLogDepth = VERBOSE; // 로그 출력 단계 설정
+
         if (mLogDepth <= type) {
             StackTraceElement element = e.getStackTrace()[0];
 

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="honeydrew">#838B83</color>
+    <color name="lightpink">#FFB6C1</color>
+
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack70">#70000000</color>
 </resources>
