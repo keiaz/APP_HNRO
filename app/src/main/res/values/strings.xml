@@ -3,6 +3,7 @@
     <string name="app_name">하냥라온</string>
     <string name="confirm">확인</string>
     <string name="cancel">취소</string>
+    <string name="close">닫기</string>
 
     <!-- main -->
     <string name="ff14_daily_lottery">파판 일일복권 경우의 수 계산기</string>
@@ -12,6 +13,7 @@
     <string name="warn_selected_number">이미 선택된 숫자입니다</string>
     <string name="min_reward">최소보상 : </string>
     <string name="max_reward">최대보상 : </string>
+    <string name="remove_number">제거</string>
 
 
     <string name="settings">설정</string>

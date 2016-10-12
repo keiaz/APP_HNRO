@@ -126,8 +126,9 @@ public class FF14_daily_lottery_Activity extends HnroActivity {
         setOnClickListener(R.id.btn_sel_diagonal1);
         setOnClickListener(R.id.btn_sel_diagonal2);
         setOnClickListener(R.id.btn_clear);
+        setOnClickListener(R.id.btn_pop_close);
         setOnClickListener(R.id.btn_pop_sel);
-        setOnClickListener(R.id.btn_pop_cancel);
+        setOnClickListener(R.id.btn_pop_remove);
     }
 
     @Override
@@ -175,11 +176,14 @@ public class FF14_daily_lottery_Activity extends HnroActivity {
             case R.id.btn_clear:
                 resetView();
                 break;
+            case R.id.btn_pop_close:
+                hidePopup();
+                break;
             case R.id.btn_pop_sel:
                 setNumber();
                 break;
-            case R.id.btn_pop_cancel:
-                hidePopup();
+            case R.id.btn_pop_remove:
+                removeNumber();
                 break;
         }
     }
@@ -301,6 +305,17 @@ public class FF14_daily_lottery_Activity extends HnroActivity {
                 mSelectButton.setText(String.valueOf(selNum));
                 hidePopup();
             }
+        } else {
+            LogManager.getInstance().error(new Exception("selected button info is null!!!"));
+        }
+    }
+
+    private void removeNumber() {
+        if (mSelectButton != null) {
+            int btnIndex = Integer.parseInt(mSelectButton.getTag().toString());
+            mUsingNumber.set(btnIndex, 0);
+            mSelectButton.setText("");
+            hidePopup();
         } else {
             LogManager.getInstance().error(new Exception("selected button info is null!!!"));
         }

@@ -269,14 +269,30 @@
             android:paddingRight="@dimen/activity_horizontal_margin"
             android:paddingTop="@dimen/activity_horizontal_margin">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end">
+
+                <ImageButton
+                    android:id="@+id/btn_pop_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/close"
+                    android:src="@drawable/ic_close_black_24dp" />
+
+            </LinearLayout>
+
             <NumberPicker
                 android:id="@+id/sel_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/btn_pop_sel"
@@ -286,10 +302,10 @@
                     tools:ignore="ButtonStyle" />
 
                 <Button
-                    android:id="@+id/btn_pop_cancel"
+                    android:id="@+id/btn_pop_remove"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/cancel" />
+                    android:text="@string/remove_number" />
 
             </LinearLayout>
 

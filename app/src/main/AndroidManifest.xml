@@ -24,7 +24,8 @@
         <activity
             android:name=".view.ff14.FF14_daily_lottery_Activity"
             android:label="@string/ff14_daily_lottery"
-            android:parentActivityName=".view.MainActivity" />
+            android:parentActivityName=".view.MainActivity"
+            android:screenOrientation="portrait" />
 
         <!-- <activity -->
         <!-- android:name=".view.SplashActivity" -->
