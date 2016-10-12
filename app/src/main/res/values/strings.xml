@@ -5,7 +5,7 @@
     <string name="cancel">취소</string>
 
     <!-- main -->
-    <string name="ff14_daily_lottery">파판 일일복권 계산기</string>
+    <string name="ff14_daily_lottery">파판 일일복권 경우의 수 계산기</string>
 
     <!-- ff14 -->
     <string name="clear">초기화</string>
